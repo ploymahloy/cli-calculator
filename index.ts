@@ -1,11 +1,10 @@
 import { question } from 'readline-sync';
 
 type Operator = '+' | '-' | '*' | '/';
-// type newCalcAnswerType = 'Y' | 'y' | 'N' | 'n';
 
 const main = (): void => {
 	const firstStr: string = question('\nEnter first number: ');
-	const operator: string = question('Enter operator [+, -, *,]: ');
+	const operator: string = question('Enter operator [+, -, *, /]: ');
 	const secondStr: string = question('Enter second number: ');
 
 	const validInput: boolean =
@@ -17,25 +16,26 @@ const main = (): void => {
 		const result = calculate(firstNum, operator as Operator, secondNum);
 		console.log('\nAnswer: ' + result);
 	} else {
-    console.log('\nInvalid input. You dissapoint me, human.\n');
+		console.log('\nInvalid input. You dissapoint me, human.');
 		return;
-  }
-  
-  const newCalcQuestion: string = question('\nNew calculation? [Y/n]\n');
-  newCalc(newCalcQuestion);
+	}
+
+	replay();
 };
 
-const newCalc = (str: string): void => {
-	switch (str) {
-		case 'Y':
+const replay = (): void => {
+	const newCalc: string = question('\nNew calculation? [Y/n] ');
+
+	switch (newCalc) {
+    case 'Y':
 		case 'y':
-			console.log('\nExcellent choice, human!');
 			main();
-    case 'N':
-    case 'n':
-			console.log('\nFine, do your own math.');
-			console.log('Goodbye, human.');
-	}
+			break;
+		default:
+      console.log('\nFine. Do your own math, human.');
+      break;
+  }
+  return
 };
 
 const isNumber = (str: string): boolean => {
