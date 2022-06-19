@@ -1,8 +1,17 @@
 import { question } from 'readline-sync';
 
 type Operator = '+' | '-' | '*' | '/';
+const logo = `.g8"""bgd \`7MMF'      \`7MMF'      .g8"""bgd         \`7MM                     \`7MM           mm                   
+.dP'     \`M   MM          MM      .dP'     \`M           MM                       MM           MM                   
+dM'       \`   MM          MM      dM'       \` ,6"Yb.    MM  ,p6"bo \`7MM  \`7MM    MM   ,6"Yb.mmMMmm ,pW"Wq.\`7Mb,od8 
+MM            MM          MM      MM         8)   MM    MM 6M'  OO   MM    MM    MM  8)   MM  MM  6W'   \`Wb MM' "' 
+MM.           MM      ,   MM      MM.         ,pm9MM    MM 8M        MM    MM    MM   ,pm9MM  MM  8M     M8 MM     
+\`Mb.     ,'   MM     ,M   MM      \`Mb.     ,'8M   MM    MM YM.    ,  MM    MM    MM  8M   MM  MM  YA.   ,A9 MM     
+  \`"bmmmd'  .JMMmmmmMMM .JMML.      \`"bmmmd' \`Moo9^Yo..JMML.YMbmd'   \`Mbod"YML..JMML.\`Moo9^Yo.\`Mbmo\`Ybmd9'.JMML.`;
 
 const main = (): void => {
+	console.log('\n' + logo);
+	
 	const firstStr: string = question('\nEnter first number: ');
 	const operator: string = question('Enter operator [+, -, *, /]: ');
 	const secondStr: string = question('Enter second number: ');
