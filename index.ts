@@ -10,8 +10,6 @@ MM.           MM      ,   MM      MM.         ,pm9MM    MM 8M        MM    MM   
   \`"bmmmd'  .JMMmmmmMMM .JMML.      \`"bmmmd' \`Moo9^Yo..JMML.YMbmd'   \`Mbod"YML..JMML.\`Moo9^Yo.\`Mbmo\`Ybmd9'.JMML.`;
 
 const main = (): void => {
-	console.log('\n' + logo);
-	
 	const firstStr: string = question('\nEnter first number: ');
 	const operator: string = question('Enter operator [+, -, *, /]: ');
 	const secondStr: string = question('Enter second number: ');
@@ -36,15 +34,15 @@ const replay = (): void => {
 	const newCalc: string = question('\nNew calculation? [Y/n] ');
 
 	switch (newCalc) {
-    case 'Y':
+		case 'Y':
 		case 'y':
 			main();
 			break;
 		default:
-      console.log('\nFine. Do your own math, human.');
-      break;
-  }
-  return
+			console.log('\nFine. Do your own math, human.');
+			break;
+	}
+	return;
 };
 
 const isNumber = (str: string): boolean => {
@@ -82,4 +80,5 @@ const calculate = (
 	}
 };
 
+console.log('\n' + logo);
 main();
